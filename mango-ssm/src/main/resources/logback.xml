@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration debug="true">
+	<property name="LOG_HOME" value="/workspace/java/mango-web/log" />
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<!-- encoders are by default assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
 		<encoder>
@@ -7,7 +8,7 @@
 		</encoder>
 	</appender>
 
-	<root level="debug">
+	<root level="info">
 		<appender-ref ref="STDOUT" />
 	</root>
 </configuration>

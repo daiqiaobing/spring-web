@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span></span>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="application/javascript"></script>
+<script>
+    var student = {};
+    student.inserts = function () {
+        var data = [{"name":"张思","age":23},{"name":"lisdji","age":90}]
+        postData("inserts", "POST", data);
+    };
+
+    student.inserts();
+
+    function postData(url, method, jsonData) {
+        $.ajax({
+            type: method,
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(jsonData),
+            dataType: "json",
+            async: true,
+            timeout: 50000,
+            success: function(msg){
+                $("span").html(msg);
+            },
+            error: function(msg){
+                $("span").html(msg);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
